@@ -1,0 +1,18 @@
+version: '2'
+services:
+  portal-e-sic:
+    image: rafaelximenes/image_esic:1.0
+    ports:
+    - 8080:80/tcp
+    links:
+    - mysql-db:mysql-db
+  mysql-db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+    - /Users/rafaelximenes/Downloads/mysqldata:/var/lib/mysql
+    ports:
+    - 3306:3306/tcp
+    labels:
+      io.rancher.container.pull_image: always
