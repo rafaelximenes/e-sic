@@ -10,4 +10,4 @@ RUN mkdir -p /var/www/html/esic
 WORKDIR /e-sic-livre
 RUN mv * /var/www/html/esic
 WORKDIR /var/www/html
-RUN chmod 777 esic
+RUN -R chmod 777 esic
